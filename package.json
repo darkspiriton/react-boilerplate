@@ -4,7 +4,7 @@
   "description": "Boilerplate for React apps",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot",
+    "start": "webpack-dev-server --mode development --port 3000 --colors --progress --open --hot",
     "build": "webpack --mode production"
   },
   "author": "Cesar Moreno",
