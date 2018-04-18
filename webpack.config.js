@@ -1,6 +1,6 @@
-const path = require('path');
-const autoprefixer = require('autoprefixer');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path')
+const autoprefixer = require('autoprefixer')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: './src/index.js',
@@ -21,15 +21,15 @@ module.exports = {
         test: /\.css$/,
         exclude: /node_modules/,
         use: [
-          { loader: "style-loader" },
+          { loader: 'style-loader' },
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
-              importLoaders: 1,
-            },
+              importLoaders: 1
+            }
           },
           {
-            loader: "postcss-loader",
+            loader: 'postcss-loader',
             options: {
               // Necessary for external CSS imports to work
               // https://github.com/facebookincubator/create-react-app/issues/2677
@@ -41,25 +41,25 @@ module.exports = {
                     '>1%',
                     'last 4 versions',
                     'Firefox ESR',
-                    'not ie < 9', // React doesn't support IE8 anyway
+                    'not ie < 9' // React doesn't support IE8 anyway
                   ],
-                  flexbox: 'no-2009',
-                }),
-              ],
-            },
-          },
+                  flexbox: 'no-2009'
+                })
+              ]
+            }
+          }
         ]
       },
       {
         test: /\.scss$/,
         exclude: /node_modules/,
         use: [
-          { loader: "style-loader" },
+          { loader: 'style-loader' },
           {
-            loader: "css-loader",
+            loader: 'css-loader'
           },
           {
-            loader: "sass-loader"
+            loader: 'sass-loader'
           }
         ]
       },
@@ -67,15 +67,15 @@ module.exports = {
         test: /\.styl$/,
         exclude: /node_modules/,
         use: [
-          { loader: "style-loader" },
+          { loader: 'style-loader' },
           {
-            loader: "css-loader",
+            loader: 'css-loader'
           },
           {
-            loader: "stylus-loader"
+            loader: 'stylus-loader'
           }
         ]
-      },
+      }
 
     ]
   },
@@ -85,4 +85,3 @@ module.exports = {
     })
   ]
 }
-
