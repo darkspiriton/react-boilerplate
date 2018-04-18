@@ -1,10 +1,12 @@
-import React, {Component} from 'react'
-import PropTypes from 'prop-types'
+import * as React from 'react'
+// import PropTypes from 'prop-types'
 // import './App.css'
 // import './App.scss'
 import './App.styl'
 
-class App extends Component {
+export interface AppProps { compiler: string; framework: string; name: string }
+
+export class App extends React.Component <AppProps, {}> {
   render () {
     return (
       <div>
@@ -15,7 +17,7 @@ class App extends Component {
   }
 }
 
-App.propTypes = {
-  name: PropTypes.string
-}
-export default App
+// App.propTypes = {
+//   name: PropTypes.string
+// }
+// export default App

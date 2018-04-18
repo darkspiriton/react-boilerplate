@@ -3,13 +3,23 @@ const autoprefixer = require('autoprefixer')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index',
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.json']
+  },
   output: {
     path: path.join(__dirname, './dist'),
     filename: 'index_bundle.js'
   },
   module: {
     rules: [
+      {
+        test: /\.(ts|tsx)$/,
+        use: {
+          loader: 'awesome-typescript-loader'
+        }
+      },
+      { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
